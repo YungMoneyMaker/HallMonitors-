@@ -1,0 +1,54 @@
+<ResourceScreen>:
+    FloatLayout:
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("39B3F2")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Label:
+            #Put Text here
+            pos_hint: {"top": 1, "left": 1}
+            size_hint: 1, .1
+            text_size: root.width, None
+            text:
+                "[b]Here you can find the rooms around TL Kennedy that are compatible with our program"
+            halign: "center"
+            valign: "top"
+            markup: True
+        GridLayout:
+            #Add School Images
+            cols: 2
+            pos_hint: {"top": .9, "left": 1}
+            size_hint: 1, .5
+            Image:
+                source: "Images/map1stfloor.png"
+            Image:
+                source: "Images/map2ndfloor.png"
+        GridLayout:
+            #Add Menu Buttons
+            rows: 1
+            pos_hint: {"top": .2, "left": 1}
+            size_hint: 1, .2
+            ImageButton:
+                source: "icons/info-icon-light.png"
+                on_press:
+                    self.source = "icons/info-icon-dark.png"
+                on_release:
+                    self.source = "icons/info-icon-light.png"
+                    app.change_screen("about_screen")
+            ImageButton:
+                source: "icons/home-icon-light.png"
+                on_press:
+                    self.source = "icons/home-icon-dark.png"
+                on_release:
+                    app.change_screen("home_screen")
+                    self.source = "icons/home-icon-light.png"
+            ImageButton:
+                source: "icons/start-icon-light.png"
+                on_press:
+                    self.source = "icons/start-icon-dark.png"
+                on_release:
+                    app.change_screen("program_screen")
+                    self.source = "icons/start-icon-light.png"
+

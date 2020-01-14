@@ -1,0 +1,56 @@
+<AboutScreen>:
+    #Create a layout for objects on the screen
+    FloatLayout:
+        #Edit the background color of the screen
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("39B3F2")
+            #Position the color to affect the entire screen
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        #Create a grid layout that the logo can fit in
+        GridLayout:
+            rows: 1
+            #Position the logo in reference to the top and left side of the grid
+            pos_hint: {"top": 1, "left": 1}
+            #Place the logo at the top of the grid and 30% from the left of the grid
+            size_hint: 1, .3
+            Image:
+                source: "icons/TLKLogo.png"
+        #TextLabel
+        Label:
+            pos_hint: {"top": .8, "left": 1}
+            size_hint: 1, .5
+            text_size: root.width, None
+            text:
+                "[b]TLKNav is an application that allows users to find the shortest path from one position to another. On the resources page you can find an image of the school layout alongside the rooms inside of TL Kennedy that currently work with our Navigation System.[/b]"
+            halign: "center"
+            valign: "top"
+            markup: True
+        GridLayout:
+            #Add Menu Buttons
+            rows: 1
+            pos_hint: {"top": .2, "left": 1}
+            size_hint: 1, .2
+            ImageButton:
+                source: "icons/Map-icon-light.png"
+                on_press:
+                    self.source = "icons/Map-icon-dark.png"
+                on_release:
+                    self.source = "icons/Map-icon-light.png"
+                    app.change_screen("resource_screen")
+            ImageButton:
+                source: "icons/home-icon-light.png"
+                on_press:
+                    self.source = "icons/home-icon-dark.png"
+                on_release:
+                    app.change_screen("home_screen")
+                    self.source = "icons/home-icon-light.png"
+            ImageButton:
+                source: "icons/start-icon-light.png"
+                on_press:
+                    self.source = "icons/start-icon-dark.png"
+                on_release:
+                    app.change_screen("program_screen")
+                    self.source = "icons/start-icon-light.png"

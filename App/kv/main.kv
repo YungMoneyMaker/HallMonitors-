@@ -1,0 +1,21 @@
+#:include kv/homescreen.kv
+#:include kv/aboutscreen.kv
+#:include kv/programscreen.kv
+#:include kv/resourcescreen.kv
+
+GridLayout:
+    cols: 1
+    ScreenManager:
+        id: screen_manager
+        HomeScreen:
+            name: "home_screen"
+            id: home_screen
+        AboutScreen:
+            name: "about_screen"
+            id: about_screen
+        ProgramScreen:
+            name: "program_screen"
+            id: program_screen
+        ResourceScreen:
+            name: "resource_screen"
+            id: resource_screen

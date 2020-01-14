@@ -1,0 +1,19 @@
+#Import Screens
+#:include homescreen.kv
+#:include settingsscreen.kv
+
+GridLayout:
+    cols: 1
+    ScreenManager:
+
+        #Referenceable ID
+        id: screen_manager
+        
+        HomeScreen:
+            #Referenceable screen ID
+            name: "home_screen"
+            id: home_screen
+        SettingsScreen:
+            name: "settings_screen"
+            id: settings_screen
+    

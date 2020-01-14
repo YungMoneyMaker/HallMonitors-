@@ -1,0 +1,27 @@
+<MyGrid>:
+
+    start: start
+    end: end
+    
+    GridLayout:
+        cols:1
+
+        GridLayout:
+            cols:2
+
+            Label:
+                text: "Start: "
+
+            TextInput:
+                id: start
+                multiline:False
+
+            Label:
+                text: "End: "
+
+            TextInput:
+                id: end
+                multiline:False
+        Button:
+            text:"Search"
+            on_press: root.btn()
